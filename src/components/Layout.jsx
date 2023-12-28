@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { CustomLink } from "./CustomLink";
 
 const Layout = () => {
-   console.log('render layout');
+   
   return (
     <div>
       <nav className="flex justify-center bg-black/80 gap-7 text-white p-5">
