@@ -1,12 +1,21 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const SinglePage = () => {
-  const { id } = useParams()
-  
-  return (
-    <div>{ id }</div>
-  )
-}
+  const { id } = useParams();
 
-export default SinglePage
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      .then((res) => res.json())
+      .then((data) => setPost(data));
+  }, [id]);
+
+  return post && <div>
+    <h1 className="text-[20px] text-center font-bold">{ post.title }</h1>
+    <p>{ post.body }</p>
+  </div>;
+};
+
+export default SinglePage;
