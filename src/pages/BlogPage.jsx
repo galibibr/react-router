@@ -15,7 +15,7 @@ const BlogPage = () => {
       <h1 className="text-center">Our posts</h1>
       <div className="flex flex-col">
         {posts.map((post) => {
-          return <Link key={post.id} to={`/blog/${post.id}`}>-{ post.title }</Link>;
+          return <Link key={post.id} to={`/blog/${post.id}`}> - { post.title }</Link>;
         })}
       </div>
     </>

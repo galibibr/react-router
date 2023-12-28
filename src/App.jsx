@@ -5,6 +5,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import SinglePage from "./pages/SinglePage";
+import CreatePost from "./pages/CreatePost";
+import EditPost from "./pages/EditPost";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id" element={<SinglePage />} />
+          <Route path="blog/:id/edit" element={<EditPost />} />
+          <Route path="blog/new" element={<CreatePost />} />
         </Route>
       </Routes>
     </>
