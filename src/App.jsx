@@ -7,6 +7,8 @@ import BlogPage from "./pages/BlogPage";
 import SinglePage from "./pages/SinglePage";
 import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
+import LoginPage from "./pages/LoginPage";
+import RequireAuth from "./hoc/RequireAuth";
 
 function App() {
   return (
@@ -19,7 +21,12 @@ function App() {
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id" element={<SinglePage />} />
           <Route path="blog/:id/edit" element={<EditPost />} />
-          <Route path="blog/new" element={<CreatePost />} />
+          <Route path="blog/new" element={
+            <RequireAuth>
+              <CreatePost />
+            </RequireAuth>
+          } />
+          <Route path="login" element={<LoginPage />} />
         </Route>
       </Routes>
     </>
