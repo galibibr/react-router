@@ -9,10 +9,11 @@ import CreatePost from "./pages/CreatePost";
 import EditPost from "./pages/EditPost";
 import LoginPage from "./pages/LoginPage";
 import RequireAuth from "./hoc/RequireAuth";
+import { AuthProvider } from "./hoc/AuthProvider";
 
 function App() {
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -29,7 +30,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
         </Route>
       </Routes>
-    </>
+    </AuthProvider>
   );
 }
 
