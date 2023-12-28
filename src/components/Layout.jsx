@@ -1,20 +1,21 @@
 import React from "react";
-import { Link, Outlet, NavLink } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import { CustomLink } from "./CustomLink";
 
 const Layout = () => {
-  const setActive = ({ isActive }) => ({ color: isActive ? "skyblue" : "white" });
+   console.log('render layout');
   return (
     <div>
       <nav className="flex justify-center bg-black/80 gap-7 text-white p-5">
-        <NavLink style={setActive} to={"/"}>
+        <CustomLink to={"/"}>
           Home
-        </NavLink>
-        <NavLink style={setActive} to={"/about"}>
+        </CustomLink>
+        <CustomLink to={"/about"}>
           About
-        </NavLink>
-        <NavLink style={setActive} to={"/blog"}>
+        </CustomLink>
+        <CustomLink to={"/blog"}>
           Blog
-        </NavLink>
+        </CustomLink>
       </nav>
 
       <main className="p-5">
