@@ -12,10 +12,17 @@ const BlogPage = () => {
 
   return (
     <>
-      <h1 className="text-center">Our posts</h1>
+      <h1 className="text-center text-[20px] font-bold">Our posts</h1>
       <div className="flex flex-col">
         {posts.map((post) => {
-          return <Link key={post.id} to={`/blog/${post.id}`}> - { post.title }</Link>;
+          return (
+            <Link
+              key={post.id}
+              to={`/blog/${post.id}`}
+              className="hover:underline">
+              - {post.title}
+            </Link>
+          );
         })}
       </div>
     </>
