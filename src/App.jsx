@@ -17,16 +17,22 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="about" element={<AboutPage />} />
-          <Route path="about-us" element={<Navigate to={'/about'} replace />} />
+          <Route path="about" element={<AboutPage />}>
+            <Route path="contacts" element={<p>Our contacts</p>} />
+            <Route path="team" element={<p>Our team</p>} />
+          </Route>
+          <Route path="about-us" element={<Navigate to={"/about"} replace />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="blog/:id" element={<SinglePage />} />
           <Route path="blog/:id/edit" element={<EditPost />} />
-          <Route path="blog/new" element={
-            <RequireAuth>
-              <CreatePost />
-            </RequireAuth>
-          } />
+          <Route
+            path="blog/new"
+            element={
+              <RequireAuth>
+                <CreatePost />
+              </RequireAuth>
+            }
+          />
           <Route path="login" element={<LoginPage />} />
         </Route>
       </Routes>

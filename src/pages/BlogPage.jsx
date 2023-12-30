@@ -7,7 +7,7 @@ const BlogPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const postQuery = searchParams.get("post") || "";
-  const latest = searchParams.has('latest')
+  const latest = searchParams.has("latest");
 
   const startsFrom = latest ? 80 : 1;
 
@@ -20,7 +20,11 @@ const BlogPage = () => {
   return (
     <>
       <h1 className="text-center text-[20px] font-bold">Our posts</h1>
-      <BlogFilter postQuery={postQuery} latest={latest} setSearchParams={setSearchParams} />
+      <BlogFilter
+        postQuery={postQuery}
+        latest={latest}
+        setSearchParams={setSearchParams}
+      />
       <Link to={"/blog/new"} className="hover:underline">
         Add new post
       </Link>
